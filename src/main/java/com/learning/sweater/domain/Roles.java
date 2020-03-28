@@ -1,5 +1,12 @@
 package com.learning.sweater.domain;
 
-public enum  Roles {
-    USER
+import org.springframework.security.core.GrantedAuthority;
+
+public enum  Roles implements GrantedAuthority {
+    USER;
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }

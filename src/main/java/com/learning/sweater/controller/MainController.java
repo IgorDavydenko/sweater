@@ -1,8 +1,10 @@
 package com.learning.sweater.controller;
 
 import com.learning.sweater.domain.Message;
+import com.learning.sweater.domain.User;
 import com.learning.sweater.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,10 +32,11 @@ public class MainController {
 
     @PostMapping("/main")
     public String addMessage(
+            @AuthenticationPrincipal User user,
             @RequestParam String message,
             @RequestParam String tag,
             Map<String, Object> model) {
-        Message newMessage = new Message(message, tag);
+        Message newMessage = new Message(message, tag, user);
         messageRepo.save(newMessage);
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
