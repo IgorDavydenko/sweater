@@ -23,6 +23,10 @@ public class Message {
         this.author = user;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getText() {
         return text;
     }
