@@ -13,9 +13,8 @@
     </div>
     <div>Messages list:</div>
     <div>
-        <form method="post" action="filter">
-            <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <input type="text" name="tag" placeholder="tag" />
+        <form method="get" action="/main">
+            <input type="text" name="filter" placeholder="${filter}" />
             <button type="submit">Filter by tag</button>
         </form>
     </div>
