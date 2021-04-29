@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sweater
+    username: sweater
+    password: sweater
+
+  jpa:
+    generate-ddl: true
+    hibernate.ddl-auto: update
+
+  freemarker:
+    expose-request-attributes: true
+
+server:
+  port : 8079
