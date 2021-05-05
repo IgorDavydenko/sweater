@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-    <title>Spring Security Example </title>
-</head>
-<body>
-<form action="/login" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <div>
-        <label>User Name : <input type="text" name="username"/></label>
-    </div>
-    <div>
-        <label>Password: <input type="password" name="password"/></label>
-    </div>
-    <div>
-        <input type="submit" value="Sign In"/>
-    </div>
-</form>
-</body>
-</html>
+<#import "patterns/common.ftlh" as common>
+<#import "patterns/auth.ftlh" as auth>
+
+<@common.htmlTree>
+    <@auth.authForm path="/login" button="Sign In"/>
+    <a href="/registration">add new user</a>
+</@common.htmlTree>
