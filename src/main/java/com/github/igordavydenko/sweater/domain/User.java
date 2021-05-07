@@ -11,7 +11,7 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String username;
     private String password;
     private Boolean active;
@@ -21,11 +21,11 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<UserRole> userRoles;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,7 +59,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return getUserRoles();
     }
 
     public String getPassword() {

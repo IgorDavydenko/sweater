@@ -8,6 +8,9 @@
         </form>
     </div>
     <div>
+        <a href="/users">Edit users list</a>
+    </div>
+    <div>
         <form method="post" action="/index">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input type="text" name="message" placeholder="input message" />
