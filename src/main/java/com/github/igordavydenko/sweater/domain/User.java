@@ -57,6 +57,10 @@ public class User implements UserDetails {
         this.username = username;
     }
 
+    public boolean isAdmin() {
+        return userRoles.contains(UserRole.ADMIN);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getUserRoles();

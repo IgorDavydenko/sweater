@@ -1,6 +1,6 @@
 <#import "patterns/common.ftlh" as common>
 
 <@common.htmlTree>
-    <p>Hello, user</p>
-    <a href="/index">Main page</a>
+    <h2>Hello, user</h2>
+    <div>It's the simplest clone of Twitter</div>
 </@common.htmlTree>
