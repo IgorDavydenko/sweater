@@ -73,7 +73,7 @@ public class MessagesController {
         if (message != null && !message.isEmpty()) {
             Message newMessage = new Message(message, tag, user);
 
-            if (file != null) {
+            if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadFilePath);
                 if (!uploadDir.exists()) {
                     uploadDir.mkdir();
