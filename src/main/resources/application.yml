@@ -13,3 +13,5 @@ spring:
 
 server:
   port : 8079
+
+upload.path: /E:/git/sweater/files

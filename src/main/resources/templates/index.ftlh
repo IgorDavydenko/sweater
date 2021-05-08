@@ -11,10 +11,11 @@
         <a href="/users">Edit users list</a>
     </div>
     <div>
-        <form method="post" action="/index">
+        <form method="post" action="/index" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input type="text" name="message" placeholder="input message" />
             <input type="text" name="tag" placeholder="input tag" />
+            <input type="file" name="file">
             <button type="submit">Add</button>
         </form>
     </div>
@@ -31,9 +32,14 @@
                 <table>
                     <#items as message>
                         <tr>
-                            <th>${message.text}</th>
-                            <th>${message.tag}</th>
-                            <th>${message.authorName}</th>
+                            <td>${message.text}</td>
+                            <td>${message.tag}</td>
+                            <td>${message.authorName}</td>
+                            <td>
+                                <#if message.fileName??>
+                                    <img src="/img/${message.fileName}">
+                                </#if>
+                            </td>
                         </tr>
                     </#items>
                 </table>
