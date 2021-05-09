@@ -1,4 +1,5 @@
 <#include "security.ftlh">
+<#import "auth.ftlh" as auth>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -21,6 +22,9 @@
                 </#if>
             </ul>
         </div>
-        <div class=".navbar-text">${name}</div>
+        <div class="navbar-text me-3">${name}</div>
+        <div>
+            <@auth.logout/>
+        </div>
     </div>
 </nav>

@@ -6,5 +6,5 @@
     <#if message?has_content>
         ${message}
     </#if>
-    <@auth.authForm path="/registration" button="Sign Up"/>
+    <@auth.authForm path="/registration" isRegisterForm=true/>
 </@common.htmlTree>

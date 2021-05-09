@@ -2,6 +2,5 @@
 <#import "patterns/auth.ftlh" as auth>
 
 <@common.htmlTree>
-    <@auth.authForm path="/login" button="Sign In"/>
-    <a href="/registration">add new user</a>
+    <@auth.authForm path="/login" isRegisterForm=false/>
 </@common.htmlTree>

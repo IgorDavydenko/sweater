@@ -2,15 +2,6 @@
 
 <@common.htmlTree>
     <div>
-        <form action="/logout" method="post">
-            <input type="hidden" name="_csrf" value="${_csrf.token}">
-            <input type="submit" value="Sign Out"/>
-        </form>
-    </div>
-    <div>
-        <a href="/users">Edit users list</a>
-    </div>
-    <div>
         <form method="post" action="/index" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="${_csrf.token}">
             <input type="text" name="message" placeholder="input message" />
