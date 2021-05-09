@@ -11,12 +11,16 @@
         </form>
     </div>
     <div>
-        <div>
-            <form method="get" action="/index">
-                <input type="text" name="filter" value="${filter!""}" placeholder="filter by tag" />
-                <button type="submit">Filter</button>
-            </form>
-        </div>
+        <form class="row row-cols-lg-auto g-0 align-items-center" method="get" action="/index">
+            <div class="col-6">
+                <input class="form-control col-12" type="text" name="filter" value="${filter!""}" placeholder="filter by tag" />
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </form>
+    </div>
+    <div>
         <div>
             <h2>Messages:</h2>
             <#list messages>
