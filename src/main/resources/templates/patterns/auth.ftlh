@@ -14,7 +14,7 @@
             </div>
         </div>
         <#if !isRegisterForm>
-            <a href="/registration">add new user</a>
+            <a class="btn btn-light" href="/registration">Register</a>
         </#if>
         <button type="submit" class="btn btn-primary">
             <#if !isRegisterForm>
